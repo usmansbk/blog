@@ -20,19 +20,35 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Make sure you have Ruby IRB installed on your computer
+- Make sure you have Ruby on Rails set up properly on your computer
 - Clone or download this repo on your machine
 - Enter project directory
 
+### Development Database
+
+```sh
+# Create user
+sudo -u postgres createuser blog -s
+
+# Create the database
+rake db:create
+```
+
+### Install
+
+```sh
+bundle install
+```
+
 ### Run
 
-```rb
+```sh
 rails s
 ```
 
 ### Test
 
-```rb
+```sh
 rspec
 ```
 
