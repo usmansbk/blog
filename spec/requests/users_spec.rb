@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", :type => :request do
+RSpec.describe 'Users', type: :request do
   describe 'GET #index' do
     before(:example) { get users_path }
 
@@ -31,6 +31,5 @@ RSpec.describe "Users", :type => :request do
     it 'should include correct placeholder text' do
       expect(response.body).to include('Here is a profile of a given user')
     end
-
   end
 end
