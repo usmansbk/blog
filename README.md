@@ -28,7 +28,13 @@ To get a local copy up and running follow these simple example steps.
 - Clone or download this repo on your machine
 - Enter project directory
 
-### Development Database
+### Install
+
+```sh
+bundle install
+```
+
+### Database
 
 ```sh
 # Create user
@@ -40,14 +46,8 @@ rake db:create
 # Load the schema
 rails db:schema:load
 
-## To apply a new migration run
+## Apply migration (only if you generate a new migration file)
 rails db:migrate
-```
-
-### Install
-
-```sh
-bundle install
 ```
 
 ### Run
