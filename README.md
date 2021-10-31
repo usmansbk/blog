@@ -36,6 +36,12 @@ sudo -u postgres createuser blog -s
 
 # Create the database
 rake db:create
+
+# Load the schema
+rails db:schema:load
+
+## To apply a new migration run
+rails db:migrate
 ```
 
 ### Install
