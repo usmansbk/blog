@@ -13,6 +13,12 @@ class PostsController < ApplicationController
   def new; end
 
   def create
-    puts params
+    post = current_user.posts.new(post_params);
+  end
+
+  private
+
+  def post_params
+    params.require(:data).permit(:title, :text)
   end
 end
