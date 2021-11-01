@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-  <%= link_to user_path(user.id), class: "my-4" do %>
+  <%= link_to user_path(user.id), class: "mx-4" do %>
     <%= render partial: "user", object: user %>
   <% end %>
 <% end %>
