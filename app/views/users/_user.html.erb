@@ -1,6 +1,10 @@
 <div>
   <div>
-   <img src="" alt="avatar" />
+  <% if user.photo.present? %>
+    <img src=<%= user.photo %> alt="profile picture" />
+  <% else %>
+    <img src="https://via.placeholder.com/150" alt="profile picture">
+  <% end %>
   </div>
   <div>
     <h4><%= user.name %></h4>
