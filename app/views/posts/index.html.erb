@@ -1,6 +1,10 @@
 <%= render partial: "users/user", object: @user %>
-<% @posts.each do |post| %>
-  <%= render partial: "post", object: post %>
-  <%= render partial: "shared/comment", collection: post.recent_comments %>
-<% end %>
+<div class="list comments-list">
+  <% @posts.each do |post| %>
+    <div>
+    <%= render partial: "post", object: post %>
+    <%= render partial: "shared/comment", collection: post.recent_comments %>
+    </div>
+  <% end %>
+</div>
 <button class="button is-small">Pagination</button>

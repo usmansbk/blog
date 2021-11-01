@@ -19,3 +19,11 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.comments-list {
+  gap: 32px;
+}
+
+.comment-item {
+  display: flex;
+}
