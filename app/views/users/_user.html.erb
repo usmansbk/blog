@@ -4,6 +4,6 @@
   </div>
   <div>
     <h4><%= user.name %></h4>
-    <p><%= t('posts_counter')%> <%= user.posts_counter %></p>
+    <p><%= t('posts_counter', count: user.posts_counter)%></p>
   </div>
 </div>

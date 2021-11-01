@@ -30,7 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  posts_counter: "Number of posts:"
+  posts_counter: "Number of posts: %{count}"
   post: "Post"
-  comments: "Comments"
-  likes: "Likes"
+  comments_counter: "Comments: %{count}"
+  likes_counter: "Likes: %{count}"
+  by: "by %{name}"

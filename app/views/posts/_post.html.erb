@@ -3,8 +3,9 @@
   <p><%= t('post')%> #<%= post.id%></p>
   <h5><%= post.title %></h5>
   <div>
-    <small><%= t('comments') %>: <%= post.comments_counter %>,</small>
-    <small><%= t('likes') %>: <%= post.likes_counter %></small>
+    <small>
+      <%= t('comments_counter', count: post.comments_counter ) %>, <%= t('likes_counter', count: post.likes_counter) %>
+    </small>
   </div>
 </div>
 <% end %>
