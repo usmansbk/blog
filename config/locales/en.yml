@@ -35,3 +35,4 @@ en:
   comments_counter: "Comments: %{count}"
   likes_counter: "Likes: %{count}"
   by: "by %{name}"
+  posted_on: "Posted on %{date}"

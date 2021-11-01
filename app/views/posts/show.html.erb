@@ -7,7 +7,7 @@
       <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
     </div>
   </div>
-  <p class="is-size-7 is-italic">Posted on Oct 20</p>
+  <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
   <h1><%= @post.title %></h1>
   <p><%= @post.text %></p>
 </div>
