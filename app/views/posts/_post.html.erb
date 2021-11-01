@@ -1,3 +1,4 @@
+<%= link_to user_post_path(post.user.id, post.id) do %>
 <div>
   <p><%= t('post')%> #<%= post.id%></p>
   <h5><%= post.title %></h5>
@@ -6,3 +7,4 @@
     <small><%= t('likes') %>: <%= post.likes_counter %></small>
   </div>
 </div>
+<% end %>
