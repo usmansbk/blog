@@ -31,7 +31,7 @@
 
 en:
   posts_counter: "Number of posts: %{count}"
-  post: "Post"
+  post: "Post #%{id}"
   comments_counter: "Comments: %{count}"
   likes_counter: "Likes: %{count}"
   by: "by %{name}"

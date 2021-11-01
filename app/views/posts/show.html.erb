@@ -1,7 +1,7 @@
 <div>
   <div>
     <div>
-      <p><%= t('post') %> #<%= @post.id %> <%= t('by', name: @user.name) %></p>
+      <p><%= t('post', id: @post.id) %> <%= t('by', name: @user.name) %></p>
     <div>
     <div>
       <p><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
