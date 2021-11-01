@@ -31,3 +31,6 @@
 
 en:
   posts_counter: "Number of posts:"
+  post: "Post"
+  comments: "Comments"
+  likes: "Likes"
