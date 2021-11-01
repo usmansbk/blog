@@ -1,14 +1,14 @@
-<div>
-  <article class="media">
+<div class="my-5">
+  <article class="media is-align-items-center">
     <div class="media-left">
-      <figure class="image is-96x96">
+      <figure class="image is-128x128">
         <img src=<%= get_photo(user) %> alt="profile picture" >
       </figure>
     </div>
-    <div class="media-content">
+    <div class="media-content notification">
       <div class="content">
         <h4 class="title is-4"><%= user.name %></h4>
-        <p><%= t('posts_counter', count: user.posts_counter)%></p>
+        <p class="has-text-right"><%= t('posts_counter', count: user.posts_counter)%></p>
       </div>
     </div>
   </article>
