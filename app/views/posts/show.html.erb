@@ -1,12 +1,12 @@
 <div class="content">
-  <div>
+  <div class="post-header">
     <div>
       <p><%= t('post', id: @post.id) %> <%= t('by', name: @user.name) %></p>
-    <div>
-    <div>
-      <p><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
     </div>
-  <div>
+    <div>
+      <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
+    </div>
+  </div>
   <h1><%= @post.title %></h1>
   <p><%= @post.text %></p>
 </div>
