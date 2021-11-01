@@ -1,4 +1,4 @@
-<%= link_to user_posts_path(post.user.id) do %>
+<%= link_to user_post_path(post.user.id, post.id) do %>
 <div>
   <p><%= t('post')%> #<%= post.id%></p>
   <h5><%= post.title %></h5>
