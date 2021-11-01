@@ -11,7 +11,7 @@
 	3.times do |j|
 		post = Post.create(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet", user: user)
 		5.times do |j|
-			Comment.create(text: "Comment ##{j}", post: post)
+			Comment.create(text: "Comment ##{j}", post: post, user: user)
 		end
 	end
 end
