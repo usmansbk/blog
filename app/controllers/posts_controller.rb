@@ -18,8 +18,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if post.save
-          redirect_to user_post_path(post.user.id, post.id)
+          redirect_to user_post_path(post.user.id, post.id), notice: "Published!"
         else
+          flash.now[:error] = "Failed to publish post!"
           render :new
         end
       end

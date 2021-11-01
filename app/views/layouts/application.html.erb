@@ -11,6 +11,14 @@
   </head>
 
   <body>
+  <% if notice.present? %>
+    <div class="notification is-link is-light"><%= notice %></div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class="notification is-danger is-light"><%= alert %></div>
+  <% end %>
+
   <div class="section">
     <div class="container">
       <%= yield %>
