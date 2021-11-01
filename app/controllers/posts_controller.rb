@@ -14,6 +14,16 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.posts.new(post_params);
+
+    respond_to do |format|
+      format.html do
+        if post.save
+          redirect_to user_post_path(post.user.id, post.id)
+        else
+          render :new
+        end
+      end
+    end
   end
 
   private
