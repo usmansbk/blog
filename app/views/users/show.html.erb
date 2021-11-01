@@ -1,1 +1,6 @@
-<h1>Here is a profile of a given user</h1>
+<%= render @user %>
+<div>
+ <h5>Bio</h5>
+ <p><%= @user.bio %></p>
+</div>
+<button type="button">See all post</button>
