@@ -1,5 +1,16 @@
 <h1 class="title is-4">Create Post</h1>
 <%= form_with url: posts_path, scope: :data do |form| %>
+	<%# <% if post.errors.any? %> %>
+		<%# <div> %>
+			<%# <h3><%= pluralize(post.errors.count, "error") %> occured:</h3> %>
+			<%# <ul> %>
+				<%# <% post.errors.full_messages.each do |message| %> %>
+					<%# <li><%= message %></li> %>
+				<%# <% end %> %>
+			<%# </ul> %>
+		<%# </div> %>
+	<%# <% end%> %>
+
 	<div class="field">
 		<%= form.label :title, "Title", class: "label" %>
 		<%= form.text_field :title, placeholder: "Title", required: true, class: "input" %>
