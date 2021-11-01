@@ -1,0 +1,12 @@
+<article class="notification my-2">
+  <div class="mb-2">
+    <p><%= t('post', id: post.id)%></p>
+    <p class="is-size-7 is-italic"><%= t('posted_on', date: post.created_at.to_s(:nice_date)) %></p>
+  </div>
+  <%= link_to user_post_path(post.user.id, post.id) do %>
+    <h3 class="title"><%= post.title %></h3>
+  <% end %>
+  <p class="has-text-right is-size-7">
+    <%= t('comments_counter', count: post.comments_counter ) %>, <%= t('likes_counter', count: post.likes_counter) %>
+  </p>
+</article>

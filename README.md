@@ -28,7 +28,13 @@ To get a local copy up and running follow these simple example steps.
 - Clone or download this repo on your machine
 - Enter project directory
 
-### Development Database
+### Install
+
+```sh
+bundle install
+```
+
+### Database
 
 ```sh
 # Create user
@@ -36,12 +42,12 @@ sudo -u postgres createuser blog -s
 
 # Create the database
 rake db:create
-```
 
-### Install
+# Load the schema
+rails db:schema:load
 
-```sh
-bundle install
+## Apply migration (only if you generate a new migration file)
+rails db:migrate
 ```
 
 ### Run

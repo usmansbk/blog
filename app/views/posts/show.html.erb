@@ -1,1 +1,14 @@
-<h1>Here is a detailed page of a post</h1>
+<div class="content">
+  <div class="post-header">
+    <div>
+      <p><%= t('post', id: @post.id) %> <%= t('by', name: @user.name) %></p>
+    </div>
+    <div>
+      <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
+    </div>
+  </div>
+  <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
+  <h1><%= @post.title %></h1>
+  <p><%= @post.text %></p>
+</div>
+<%= render partial: "shared/comment", collection: @comments %>

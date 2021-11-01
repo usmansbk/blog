@@ -1,1 +1,7 @@
-<h1>Here is a list of users</h1>
+<div class="list">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <%= render partial: "user", object: user %>
+    <% end %>
+  <% end %>
+</div>
