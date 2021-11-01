@@ -1,9 +1,9 @@
-<%= link_to user_post_path(post.user.id, post.id), class: "mx-2" do %>
-<div class="notification has-background-grey-lighter">
-  <p><%= t('post', id: post.id)%></p>
-  <h5 class="subtitle is-5"><%= post.title %></h5>
-  <p class="has-text-right">
+<div class="notification">
+  <p class="mb-3"><%= t('post', id: post.id)%></p>
+  <h5 class="title is-4">
+    <%= link_to post.title, user_post_path(post.user.id, post.id), class: "is-link" %>
+  </h5>
+  <p class="has-text-right is-size-7">
     <%= t('comments_counter', count: post.comments_counter ) %>, <%= t('likes_counter', count: post.likes_counter) %>
   </p>
 </div>
-<% end %>
