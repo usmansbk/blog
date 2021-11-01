@@ -1,3 +1,4 @@
+<%= render "header" %>
 <div class="list">
   <% @users.each do |user| %>
     <%= link_to user_path(user.id) do %>
