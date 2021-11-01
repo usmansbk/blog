@@ -36,4 +36,4 @@ en:
   likes_counter: "Likes: %{count}"
   by: "by %{name}"
   posted_on: "Posted on %{date}"
-  create_post: "Create post"
+  create_post: "Create Post"
