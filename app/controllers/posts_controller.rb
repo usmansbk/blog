@@ -7,13 +7,13 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    @comments = @post.comments.order("created_at").all
+    @comments = @post.comments.order('created_at').all
   end
 
   def new; end
 
   def create
-    post = current_user.posts.new(post_params);
+    post = current_user.posts.new(post_params)
 
     respond_to do |format|
       format.html do
