@@ -1,7 +1,9 @@
 <%= render @user %>
 <div class="my-2">
+<% if @user.bio.present?%>
  <h5>Bio</h5>
  <p><%= @user.bio %></p>
+<% end %>
 </div>
 <%= render partial: "posts/post", collection: @posts %>
 <div class="is-align-items-center">

@@ -7,6 +7,7 @@
       <p><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
     </div>
   <div>
+  <h2 class="title is-1"><%= @post.title %></h2>
   <p><%= @post.text %></p>
   <div>
     <%= render partial: "shared/comment", collection: @comments %>
