@@ -38,6 +38,3 @@ en:
   posted_on: "Posted on %{date}"
   create_post: "Create Post"
   time_ago: "%{time} ago"
-  no_title: "Title must not be blank"
-  no_name: "Name must not be blank"
-  title_too_long: "Title must not execeed #{length} characters"
