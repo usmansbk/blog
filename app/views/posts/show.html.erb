@@ -10,7 +10,11 @@
   <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
   <div class="post-title-container">
     <h1 class="title"><%= @post.title %></h1>
-    <%= render partial: "like_post", post: @post %>
+    <% if @liked %>
+      <%= render partial: "unlike_post", post: @post %>
+    <% else %>
+      <%= render partial: "like_post", post: @post %>
+    <% end %>
   </div>
   <p><%= @post.text %></p>
 </div>
