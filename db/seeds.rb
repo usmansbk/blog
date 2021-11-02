@@ -13,5 +13,6 @@
 		5.times do |k|
 			Comment.create(text: "Comment ##{k}", post: post, user: user)
 		end
+		post.likes.create(user: user)
 	end
 end
