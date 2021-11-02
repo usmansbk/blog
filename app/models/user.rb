@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def recent_posts(limit = 3)
-    posts.last(limit)
+    posts.includes(:comments).last(limit)
   end
 end
