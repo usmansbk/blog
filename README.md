@@ -46,6 +46,9 @@ rake db:create
 # Load the schema
 rails db:schema:load
 
+# Seed
+rails db:seed
+
 ## Apply migration (only if you generate a new migration file)
 rails db:migrate
 ```

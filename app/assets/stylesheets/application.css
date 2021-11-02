@@ -24,6 +24,8 @@
   gap: 32px;
 }
 
-.comment-item {
-  display: flex;
+@media screen and (min-width: 992px) {
+  .container {
+    width: 50%;
+  }
 }

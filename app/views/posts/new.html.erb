@@ -1,0 +1,11 @@
+<h1 class="title is-4">Create Post</h1>
+<%= form_with url: posts_path, scope: :data do |form| %>
+	<div class="field">
+		<%= form.label :title, "Title", class: "label" %>
+		<%= form.text_field :title, placeholder: "Title", required: true, class: "input" %>
+	</div>
+	<div class="field">
+		<%= form.text_area :text, placeholder: "Type here...", rows: 14, required: true, class: "textarea has-fixed-size" %>
+	</div>
+	<%= form.submit "Publish", class: "button is-link is-success" %>
+<% end %>

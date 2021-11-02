@@ -36,3 +36,5 @@ en:
   likes_counter: "Likes: %{count}"
   by: "by %{name}"
   posted_on: "Posted on %{date}"
+  create_post: "Create Post"
+  time_ago: "%{time} ago"
