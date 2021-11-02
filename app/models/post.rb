@@ -7,6 +7,9 @@ class Post < ApplicationRecord
     comments.last(limit)
   end
 
+  def liked?
+  end
+
   def update_counter(value)
     user.update('posts_counter', value)
   end
