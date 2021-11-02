@@ -1,13 +1,22 @@
 <div class="content">
-  <div class="post-header">
-    <div>
-      <p><%= t('post', id: @post.id) %> <%= t('by', name: @user.name) %></p>
+  <div class="post-header mb-2">
+    <div class="media is-flex is-align-items-center">
+      <div class="media-left">
+        <div class="image is-32x32">
+          <img class="is-rounded" src=<%= get_photo(@user) %>>
+        </div>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <strong><%= @user.name %></strong>
+          <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
+        </div>
+      </div>
     </div>
     <div>
       <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
     </div>
   </div>
-  <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
   <div class="post-title-container">
     <h1 class="title"><%= @post.title %></h1>
     <% if @liked %>
