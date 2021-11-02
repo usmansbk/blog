@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: { message: 'Name must not be blank' }
-  validates :posts_counter, numericality: { greater_than: 0 }
+  validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
