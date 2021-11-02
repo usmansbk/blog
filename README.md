@@ -62,7 +62,7 @@ rails s
 ### Test
 
 ```sh
-rake spec
+rspec
 ```
 
 ## Authors
