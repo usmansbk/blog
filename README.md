@@ -65,6 +65,14 @@ rails s
 rspec
 ```
 
+### Troubleshoot
+
+### Rspec failing
+
+```sh
+RAILS_ENV=test rake db:reset
+```
+
 ## Authors
 
 👤 **Usman**
