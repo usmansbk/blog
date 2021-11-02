@@ -10,8 +10,9 @@
 	user = User.create(name: "User ##{i}", bio: "A bio.")
 	3.times do |j|
 		post = Post.create(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet", user: user)
-		5.times do |j|
-			Comment.create(text: "Comment ##{j}", post: post, user: user)
+		5.times do |k|
+			Comment.create(text: "Comment ##{k}", post: post, user: user)
 		end
+		post.likes.create(user: user)
 	end
 end
