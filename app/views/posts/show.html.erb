@@ -11,4 +11,5 @@
   <h1><%= @post.title %></h1>
   <p><%= @post.text %></p>
 </div>
+<%= render "new_comment" %>
 <%= render partial: "shared/comment", collection: @comments %>
