@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :name, presence: { message: 'Name must not be blank' }
+  validates :name, presence: { message: t('no_name') }
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
