@@ -13,17 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.comments-list {
-  gap: 32px;
-}
-
 @media screen and (min-width: 992px) {
   .container {
     width: 50%;

@@ -1,10 +1,9 @@
 <%= render partial: "users/user", object: @user %>
-<div class="list comments-list">
+<div class="columns is-flex-direction-column">
   <% @posts.each do |post| %>
-    <div>
-    <%= render partial: "post", object: post %>
-    <%= render partial: "shared/comment", collection: post.recent_comments %>
+    <div class="column">
+      <%= render partial: "post", object: post %>
+      <%= render partial: "shared/comment", collection: post.recent_comments %>
     </div>
   <% end %>
 </div>
-<button class="button is-small">Pagination</button>
