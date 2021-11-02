@@ -1,22 +1,3 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-.post-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media screen and (min-width: 992px) {
-    flex-direction: row;
-  }
-}
-
-.post-title-container {
-  display: flex;
-  gap: 8px;
-
-  .title {
-    flex-grow: 1;
-  }
-}
