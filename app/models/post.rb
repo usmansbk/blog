@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  validates :title, presence: { message: 'Title must not be blank' },
+                    length: { maximum: 250, too_long: 'Title must not execeed 250 characters' }
+
   belongs_to :user, counter_cache: :posts_counter
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
