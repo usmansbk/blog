@@ -1,5 +1,5 @@
 <h1 class="title is-4">Create Post</h1>
-<%= form_with model: @post, url: posts_path, scope: :data do |form| %>
+<%= form_with model: @post, url: create_post_path, scope: :data do |form| %>
 	<% if @post.errors.any? %>
 		<div class="mb-2 p-2 has-background-danger has-text-danger-light">
 			<h3><%= pluralize(@post.errors.count, "error") %> occured:</h3>
