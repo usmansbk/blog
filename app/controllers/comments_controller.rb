@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-		post = current_user.posts.find(params[:post_id])
+    post = current_user.posts.find(params[:post_id])
     comment = post.comments.new(text: comment_params[:text], user: current_user)
 
     respond_to do |format|
