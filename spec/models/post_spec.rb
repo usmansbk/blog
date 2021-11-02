@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'validates' do
-    subject { Post.new title: "RSpec", user_id: 0 }
+    subject { Post.new title: 'RSpec', user_id: 0 }
 
     before { subject.save }
-    
+
     it 'should have a title' do
       subject.title = nil
       expect(subject).to_not be_valid
