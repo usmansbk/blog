@@ -1,4 +1,4 @@
-<%= form_with url: post_comments_path(@post.id), scope: :data, class: "mb-6" do |form| %>
+<%= form_with url: post_comments_path(@post.id), local: false, scope: :data, class: "mb-6" do |form| %>
 	<div class="field">
 		<%= form.text_area :text, placeholder: "Leave a comment...", rows: 3, required: true, class: "textarea has-fixed-size" %>
 	</div>
