@@ -12,13 +12,15 @@
         <%= comment.text %>
       </p>
     </div>
-    <nav class="level is-mobile">
-      <div class="level-left"></div>
-      <div class="level-right">
-        <a class="level-item">
-          <button class="button is-small is-danger is-light">Delete</button>
-        </a>
-      </div>
-    </nav>
+    <% if can? :destroy, comment %>
+      <nav class="level is-mobile">
+        <div class="level-left"></div>
+        <div class="level-right">
+          <a class="level-item">
+            <button class="button is-small is-danger is-light">Delete</button>
+          </a>
+        </div>
+      </nav>
+    <% end %>
   </div>
 </article>
