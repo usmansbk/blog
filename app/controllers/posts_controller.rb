@@ -21,7 +21,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def update; end
+  def update
+    @post = Post.find(params[:id]).attributes(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to user_post_path(@post.user.id, @post.id), notice: 'Published successfully!' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
 
   def create
     @post = current_user.posts.new(post_params)
@@ -30,7 +40,6 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to user_post_path(@post.user.id, @post.id), notice: 'Published successfully!' }
       else
-        flash.now[:alert] = 'Failed to publish post!'
         format.html { render :new }
       end
     end
