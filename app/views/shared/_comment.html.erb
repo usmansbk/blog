@@ -16,9 +16,7 @@
       <nav class="level is-mobile">
         <div class="level-left"></div>
         <div class="level-right">
-          <a class="level-item">
-            <button class="button is-small is-danger is-light">Delete</button>
-          </a>
+		      <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "level-item button is-light is-danger is-small" %>
         </div>
       </nav>
     <% end %>

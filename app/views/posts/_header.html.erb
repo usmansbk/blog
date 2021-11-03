@@ -1,6 +1,6 @@
 <div class="is-flex mb-2">
 	<div class="buttons">
-		<button class="button is-light is-link is-small">Edit</button>
-		<button class="button is-light is-danger is-small">Delete</button>
+		<%= link_to "Edit", post_path(@post.id), method: :patch, class: "button is-light is-link is-small" %>
+		<%= link_to "Delete", post_path(@post.id), method: :delete, class: "button is-light is-danger is-small" %>
 	</div>
 </div>
