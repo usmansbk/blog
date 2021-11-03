@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes
 
+  def admin?
+    role == 'admin'
+  end
+
   def recent_posts(limit = 3)
     posts.includes(:comments).last(limit)
   end
