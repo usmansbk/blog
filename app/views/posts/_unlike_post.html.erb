@@ -1,3 +1,1 @@
-<%= form_with url: post_likes_path(@post.id) do |form| %>
-	<%= form.submit "Like", class: "button is-primary is-small" %>
-<% end %>
+<%= link_to "Like", post_likes_path(@post.id), method: :post, class: "button is-primary is-small" %>
