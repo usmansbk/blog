@@ -15,6 +15,6 @@ class User < ApplicationRecord
   end
 
   def recent_posts(limit = 3)
-    posts.includes(:comments).last(limit)
+    posts.includes(:comments).order('created_at').last(limit)
   end
 end
