@@ -1,1 +1,1 @@
-<%= link_to "Like", like_path(@post.id), method: :delete, class: "button is-primary is-small" %>
+<%= button_to "Like", like_path(@post.id), method: :delete, remote: true, class: "button is-primary is-small" %>

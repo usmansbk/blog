@@ -1,1 +1,1 @@
-<%= link_to "Like", post_likes_path(@post.id), method: :post, class: "button is-primary is-small is-outlined" %>
+<%= button_to "Like", post_likes_path(@post.id), method: :post, remote: true, class: "button is-primary is-small is-outlined" %>
