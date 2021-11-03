@@ -16,7 +16,6 @@ class LikesController < ApplicationController
 
   def destroy
     post = Post.find params[:id]
-    post.users.delete current_user
 
     respond_to do |format|
       format.html do
