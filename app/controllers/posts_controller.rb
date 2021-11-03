@@ -17,11 +17,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
   def create
     @post = current_user.posts.new(post_params)
@@ -38,8 +36,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
