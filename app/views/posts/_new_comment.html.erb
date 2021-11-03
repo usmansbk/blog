@@ -2,5 +2,5 @@
 	<div class="field">
 		<%= form.text_area :text, placeholder: "Leave a comment...", rows: 3, required: true, class: "textarea has-fixed-size" %>
 	</div>
-	<%= form.submit "Submit", class: "button is-link" %>
+	<%= form.submit "Submit", class: "button is-link", data: { disable_with: 'Loading...'} %>
 <% end %>
