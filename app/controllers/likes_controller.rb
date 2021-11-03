@@ -19,7 +19,7 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       format.html do
-        if post.users.delete current_user 
+        if post.users.delete current_user
           redirect_to user_post_path(post.user.id, post.id)
         else
           redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to unlike post!'
