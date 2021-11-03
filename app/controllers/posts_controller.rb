@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if post.destroy
-          redirect_to user_path(user.id)
+          redirect_to user_path(user.id), notice: 'Post deleted!'
         else
           redirect_to user_path(user.id), alert: 'Failed to delete post!'
         end
