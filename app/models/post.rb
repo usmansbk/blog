@@ -9,14 +9,14 @@ class Post < ApplicationRecord
   has_many :users, through: :likes, counter_cache: :likes_counter
 
   def recent_comments(limit = 5)
-    comments.last(limit)
+    comments.last limit
   end
 
   def liked?(id)
-    users.exists?(id)
+    users.exists? id
   end
 
   def update_counter(value)
-    user.update(posts_counter: value)
+    user.update posts_counter: value
   end
 end
