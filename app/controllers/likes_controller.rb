@@ -16,8 +16,8 @@ class LikesController < ApplicationController
 
   def destroy
     post = Post.find params[:id]
-    like = current_user.like post.id 
+    like = current_user.like post.id
 
-    redirect_to user_post_path(post.user.id, post.id), notice: "Unliked!"
+    redirect_to user_post_path(post.user.id, post.id), notice: 'Unliked!'
   end
 end
