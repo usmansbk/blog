@@ -1,6 +1,6 @@
 <div class="is-flex mb-2">
 	<div class="buttons">
 		<%= link_to "Edit", edit_post_path(@post.id), class: "button is-light is-link is-small" %>
-		<%= button_to "Delete", post_path(@post.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "button is-light is-danger is-small" %>
+		<%= button_to "Delete", post_path(@post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-light is-danger is-small" %>
 	</div>
 </div>
