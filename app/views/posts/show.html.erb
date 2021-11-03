@@ -16,9 +16,7 @@
         </div>
       </div>
     </div>
-    <div>
-      <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
-    </div>
+    <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
   </div>
   <div class="is-flex is-flex-wrap-wrap mb-2">
     <h1 class="title is-flex is-flex-grow-1"><%= @post.title %></h1>
