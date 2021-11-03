@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top" >
+<html class="has-navbar-fixed-top">
   <head>
     <title>Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,26 +11,26 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
+    <%= render "shared/navbar" %>
 
-  <% if notice.present? %>
-    <div class="notification is-link is-light">
-      <button class="delete"></button>
-      <%= notice %>
-    </div>
-  <% end %>
+    <% if notice.present? %>
+      <div class="notification is-link is-light">
+        <button class="delete"></button>
+        <%= notice %>
+      </div>
+    <% end %>
 
-  <% if alert.present? %>
-    <div class="notification is-danger is-light">
-      <button class="delete"></button>
-      <%= alert %>
-    </div>
-  <% end %>
+    <% if alert.present? %>
+      <div class="notification is-danger is-light">
+        <button class="delete"></button>
+        <%= alert %>
+      </div>
+    <% end %>
 
-  <div class="section">
-    <div class="container">
-      <%= yield %>
+    <div class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
-  </div>
   </body>
 </html>
