@@ -7,8 +7,10 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:new] do
     resources :comments, only: [:create]
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:create]
   end
+
+  resources :likes, only: [:destroy]
 
   post '/posts/new', to: 'posts#create', as: 'create_post'
 
