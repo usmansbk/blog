@@ -7,6 +7,7 @@
   <div class="media-content notification">
     <div class="content">
       <h4 class="title is-4"><%= user.name %></h4>
+      <p class="subtitle is-size-7"><%= t('joined', date: user.created_at.to_s(:nice_date)) %></p>
       <p class="has-text-right is-size-7"><%= t('posts_counter', count: user.posts_counter)%></p>
     </div>
   </div>
