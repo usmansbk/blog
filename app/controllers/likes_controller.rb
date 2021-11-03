@@ -8,7 +8,7 @@ class LikesController < ApplicationController
         if like.save
           redirect_to user_post_path(post.user.id, post.id)
         else
-          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed!'
+          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to like post!'
         end
       end
     end
@@ -18,6 +18,14 @@ class LikesController < ApplicationController
     post = Post.find params[:id]
     post.users.delete current_user
 
-    redirect_to user_post_path(post.user.id, post.id)
+    respond_to do |format|
+      format.html do
+        if post.users.delete current_user 
+          redirect_to user_post_path(post.user.id, post.id)
+        else
+          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to unlike post!'
+        end
+      end
+    end
   end
 end
