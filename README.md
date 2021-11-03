@@ -43,14 +43,11 @@ sudo -u postgres createuser blog -s
 # Create the database
 rake db:create
 
+## Apply migration
+rails db:migrate
+
 # Load the schema
 rails db:schema:load
-
-# Seed
-rails db:seed
-
-## Apply migration (only if you generate a new migration file)
-rails db:migrate
 ```
 
 ### Run
@@ -62,6 +59,9 @@ rails s
 ### Test
 
 ```sh
+# Load mock data
+rails db:seed
+
 rspec
 ```
 
