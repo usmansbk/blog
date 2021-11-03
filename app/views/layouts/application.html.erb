@@ -14,11 +14,17 @@
   <%= render "shared/navbar" %>
 
   <% if notice.present? %>
-    <div class="notification is-link is-light"><%= notice %></div>
+    <div class="notification is-link is-light">
+      <button class="delete"></button>
+      <%= notice %>
+    </div>
   <% end %>
 
   <% if alert.present? %>
-    <div class="notification is-danger is-light"><%= alert %></div>
+    <div class="notification is-danger is-light">
+      <button class="delete"></button>
+      <%= alert %>
+    </div>
   <% end %>
 
   <div class="section">
