@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def recent_posts(limit = 3)
     posts.includes(:comments).last(limit)
   end
+
+  def like(post_id)
+    likes.find_by(post_id: post_id)
+  end
 end
