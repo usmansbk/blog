@@ -12,7 +12,7 @@ class Post < ApplicationRecord
     comments.last(limit)
   end
 
-  def liked? id
+  def liked?(id)
     users.exists?(id)
   end
 
