@@ -6,7 +6,7 @@
     <div class="media is-flex is-align-items-center">
       <div class="media-left">
         <div class="image is-32x32">
-          <img class="is-rounded" src=<%= get_photo(@user) %>>
+          <%= image_tag(get_photo(@user), alt: "avatar", class: "is-rounded") %>
         </div>
       </div>
       <div class="media-content">
