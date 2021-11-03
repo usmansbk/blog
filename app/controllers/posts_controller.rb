@@ -8,8 +8,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments).find(params[:id])
     @comments = @post.comments.all.order('created_at')
-    @like = current_user.like @post.id
-    @liked = @like.present? 
+    @liked = @post.liked? current_user.id 
   end
 
   def new
