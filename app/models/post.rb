@@ -5,14 +5,14 @@ class Post < ApplicationRecord
 
   belongs_to :user, counter_cache: :posts_counter
   has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :delete_all
+  has_many :liked_by, class_name: "Like", through: :likes
 
   def recent_comments(limit = 5)
     comments.last(limit)
   end
 
-  def liked?(user_id)
-    likes.exists?(user_id: user_id)
+  def liked?
+    liked_by.exists?(user: current_user)
   end
 
   def update_counter(value)

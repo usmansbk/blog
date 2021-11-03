@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
-    post = Post.find(params[:post_id])
-    like = post.likes.new(user: current_user)
+    post = Post.find params[:post_id]
+    like = post.liked_by.new user: current_user
 
     respond_to do |format|
       format.html do
@@ -16,7 +16,6 @@ class LikesController < ApplicationController
 
   def destroy
     post = Post.find params[:id]
-    like = current_user.like post.id
 
     redirect_to user_post_path(post.user.id, post.id), notice: 'Unliked!'
   end
