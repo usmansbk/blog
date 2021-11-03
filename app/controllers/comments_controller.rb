@@ -6,12 +6,10 @@ class CommentsController < ApplicationController
     comment = post.comments.new(text: comment_params[:text], user: current_user)
 
     respond_to do |format|
-      format.html do
-        if comment.save
-          redirect_to user_post_path(post.user.id, post.id), notice: 'Comment added!'
-        else
-          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to add comment!'
-        end
+      if comment.save
+        format.html { redirect_to user_post_path(post.user.id, post.id), notice: 'Comment added!' }
+      else
+        format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to add comment!' }
       end
     end
   end
@@ -21,12 +19,10 @@ class CommentsController < ApplicationController
     post = comment.post
 
     respond_to do |format|
-      format.html do
-        if comment.destroy
-          redirect_to user_post_path(post.user.id, post.id), notice: 'Comment deleted!'
-        else
-          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to delete comment!'
-        end
+      if comment.destroy
+        format.html { redirect_to user_post_path(post.user.id, post.id), notice: 'Comment deleted!' }
+      else
+        format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to delete comment!' }
       end
     end
   end
