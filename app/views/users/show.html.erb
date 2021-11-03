@@ -6,6 +6,6 @@
 	</div>
 <% end %>
 <%= render partial: "posts/post", collection: @posts %>
-<% if @posts.length > 3 %>
+<% if @user.posts_counter > 3 %>
 	<%= link_to "See all post", user_posts_path(@user.id), class: "button is-link is-small" %>
 <% end %>
