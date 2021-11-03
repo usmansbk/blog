@@ -27,13 +27,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     respond_to do |format|
-      format.html do
-        if @post.save
-          redirect_to user_post_path(@post.user.id, @post.id), notice: 'Published successfully!'
-        else
-          flash.now[:alert] = 'Failed to publish post!'
-          render :new
-        end
+      if @post.save
+        format.html { redirect_to user_post_path(@post.user.id, @post.id), notice: 'Published successfully!' }
+      else
+        flash.now[:alert] = 'Failed to publish post!'
+        format.html { render :new }
       end
     end
   end
@@ -43,12 +41,10 @@ class PostsController < ApplicationController
     user = post.user
 
     respond_to do |format|
-      format.html do
-        if post.destroy
-          redirect_to user_path(user.id), notice: 'Post deleted!'
-        else
-          redirect_to user_path(user.id), alert: 'Failed to delete post!'
-        end
+      if post.destroy
+        format.html { redirect_to user_path(user.id), notice: 'Post deleted!' }
+      else
+        format.html { redirect_to user_path(user.id), alert: 'Failed to delete post!' }
       end
     end
   end
