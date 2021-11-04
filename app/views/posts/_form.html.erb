@@ -1,0 +1,21 @@
+<%= form_with model: @post do |form| %>
+	<% if @post.errors.any? %>
+		<div class="notification mb-2 p-2 has-background-danger-light has-text-danger">
+			<h3><%= pluralize(@post.errors.count, "error") %> occured:</h3>
+			<ul>
+				<% @post.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= form.label :title, "Title", class: "label" %>
+		<%= form.text_field :title, placeholder: "Title", required: true, autofocus: true, class: "input" %>
+	</div>
+	<div class="field">
+		<%= form.text_area :text, placeholder: "Type here...", rows: 10, required: true, class: "textarea" %>
+	</div>
+	<%= form.submit "Publish", class: "button is-link is-success", data: { disable_with: 'Loading...'} %>
+<% end %>

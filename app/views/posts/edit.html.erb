@@ -1,22 +1,2 @@
 <h1 class="title is-4">Edit Post</h1>
-<%= form_with model: @post, url: create_post_path, scope: :data do |form| %>
-	<% if @post.errors.any? %>
-		<div class="mb-2 p-2 has-background-danger has-text-danger-light">
-			<h3><%= pluralize(@post.errors.count, "error") %> occured:</h3>
-			<ul>
-				<% @post.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
-	<div class="field">
-		<%= form.label :title, "Title", class: "label" %>
-		<%= form.text_field :title, placeholder: "Title", required: true, autofocus: true, class: "input" %>
-	</div>
-	<div class="field">
-		<%= form.text_area :text, placeholder: "Type here...", rows: 10, required: true, class: "textarea" %>
-	</div>
-	<%= form.submit "Publish", class: "button is-link is-success" %>
-<% end %>
+<%= render 'form' %>
