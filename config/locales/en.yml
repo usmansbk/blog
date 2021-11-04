@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  brand: "BLOG"
   posts_counter: "Number of posts: %{count}"
   post: "Post #%{id}"
   comments_counter: "Comments: %{count}"
@@ -50,3 +51,5 @@ en:
   type_here: "Type here..."
   submit: "Submit"
   leave_comment: "Leave a comment..."
+  create_title: "Create post"
+  edit_title: "Edit post"
