@@ -39,3 +39,8 @@ en:
   create_post: "Create Post"
   time_ago: "%{time} ago"
   joined: "Joined on %{date}"
+  edit: "Edit"
+  delete: "Delete"
+  comment: "Comment"
+  like: "Like"
+  confirm: "Are you sure?"
