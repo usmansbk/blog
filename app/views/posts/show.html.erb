@@ -1,7 +1,5 @@
 <div class="content">
-  <% if can? :edit, @post %>
-    <%= render partial: "header", post: @post %>
-  <% end %>
+  <%= render "header", post: @post %>
   <div class="is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap mb-4">
     <div class="media is-flex is-align-items-center">
       <div class="media-left">
@@ -16,16 +14,9 @@
         </div>
       </div>
     </div>
-    <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
+    <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %></p>
   </div>
-  <div class="is-flex is-flex-wrap-wrap mb-2">
-    <h1 class="title is-flex is-flex-grow-1"><%= @post.title %></h1>
-    <% if @liked %>
-      <%= render partial: "unlike_post", post: @post %>
-    <% else %>
-      <%= render partial: "like_post", post: @post %>
-    <% end %>
-  </div>
+  <h1 class="title mb-2"><%= @post.title %></h1>
   <p><%= @post.text %></p>
 </div>
 <%= render partial: "new_comment", post: @post %>
