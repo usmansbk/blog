@@ -6,7 +6,8 @@
   <%= link_to user_post_path(post.user.id, post.id) do %>
     <h3 class="title mb-2"><%= post.title %></h3>
   <% end %>
-  <p class="has-text-right is-size-7">
-    <%= t('comments_counter', count: post.comments_counter ) %>, <%= t('likes_counter', count: post.likes_counter) %>
-  </p>
+  <div class="buttons is-flex is-justify-content-flex-end">
+    <span class="button is-small is-light is-transparent is-static"><%= pluralize(post.comments_counter, t('comment')) %></span>
+    <span class="button is-small is-light is-transparent is-static"><%= pluralize(post.likes_counter, t('like')) %></span>
+  </div>
 </article>
