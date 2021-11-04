@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validates' do
-    subject { User.first }
+    subject { FactoryBot.build :user }
 
     it 'should have a name' do
       subject.name = nil
@@ -21,7 +21,11 @@ RSpec.describe User, type: :model do
   end
 
   describe '#recent_posts' do
-    subject { User.first }
+    subject do
+      FactoryBot.create :user do |user|
+        FactoryBot.create_list(:post, 3, user: user)
+      end
+    end
 
     it 'should return 3 posts' do
       expect(subject.recent_posts.length).to be(3)
