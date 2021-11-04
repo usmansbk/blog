@@ -9,6 +9,10 @@ FactoryBot.define do
     password { 'secret_token' }
     password_confirmation { 'secret_token' }
     confirmed_at { Date.today }
+
+    factory :admin do
+      role { 'admin' }
+    end
   end
 
   factory :post do
