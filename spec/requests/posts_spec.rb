@@ -4,10 +4,7 @@ RSpec.describe 'Posts', type: :request do
   login_user
 
   describe 'GET #index' do
-    before(:example) do
-      FactoryBot.create_list(:post, 5, user: @user)
-      get user_posts_path(@user.id)
-    end
+    before(:example) { get user_posts_path(@user.id) }
 
     it 'should have correct response status' do
       expect(response).to have_http_status(:ok)

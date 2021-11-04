@@ -31,12 +31,7 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#recent_comments' do
-    subject do
-      user = FactoryBot.create :user
-      FactoryBot.create :post do |post|
-        FactoryBot.create_list(:comment, 5, post: post, user: user)
-      end
-    end
+    subject { FactoryBot.create :post_with_comments, comments_counter: 5 }
 
     it 'should return 5 posts' do
       expect(subject.recent_comments.length).to be(5)

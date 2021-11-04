@@ -1,7 +1,7 @@
 module ControllerMacros
   def login_admin
     before(:each) do
-      @admin FactoryBot.create :admin
+      @admin = FactoryBot.create :admin
       sign_in @admin
     end
   end

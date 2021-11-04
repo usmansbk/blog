@@ -21,11 +21,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#recent_posts' do
-    subject do
-      FactoryBot.create :user do |user|
-        FactoryBot.create_list(:post, 3, user: user)
-      end
-    end
+    subject { FactoryBot.create :user_with_posts, posts_counter: 3 }
 
     it 'should return 3 posts' do
       expect(subject.recent_posts.length).to be(3)
