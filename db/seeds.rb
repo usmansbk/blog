@@ -7,9 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |i|
-	user = User.new(name: "User ##{i}", bio: "A bio.", email: "test#{i}@email.com", password: "password", password_confirmation: "password")
-	user.skip_confirmation!
-	user.save!
+	user = User.create(name: "User ##{i}", bio: "A bio.", email: "test#{i}@email.com", password: "password", password_confirmation: "password", confirmed_at: Date.today )
 	3.times do |j|
 		post = user.posts.create!(title: "Post ##{j}", text: "Lorem Ipsum Dolor Amet")
 		user.likes.create!(post: post)
