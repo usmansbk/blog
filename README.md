@@ -12,6 +12,7 @@ Blog website that shows a list of posts and empower readers to interact with the
 
 - Ruby on Rails
 - PostgreSQL
+- Bulma CSS
 
 ## Getting Started
 
