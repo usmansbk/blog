@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validates' do
-    subject { User.new name: 'Usman Suleiman' }
-
-    before { subject.save }
+    subject { User.first }
 
     it 'should have a name' do
       subject.name = nil
