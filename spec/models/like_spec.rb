@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   describe '#update_counter' do
-    subject { Like.first }
+    subject { FactoryBot.create :like }
 
     it 'should update the post likes counter' do
       subject.update_counter(2)
