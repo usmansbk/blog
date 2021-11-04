@@ -9,10 +9,8 @@ FactoryBot.define do
         comments_counter { 5 }
       end
 
-      after(:create) do |post, evaluator|
-        create_list(:comment, evaluator.comments_counter, post: post, user: post.user)
-
-        post.reload
+      comments do
+        Array.new(comments_counter) { association(:comment) }
       end
     end
 
@@ -21,10 +19,8 @@ FactoryBot.define do
         likes_counter { 5 }
       end
 
-      after(:create) do |post, evaluator|
-        create_list(:like, evaluator.likes_counter, post: post, user: post.user)
-
-        post.reload
+      likes do
+        Array.new(likes_counter) { association(:like) }
       end
     end
   end

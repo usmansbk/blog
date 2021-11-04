@@ -19,10 +19,8 @@ FactoryBot.define do
         posts_counter { 5 }
       end
 
-      after(:create) do |user, evaluator|
-        create_list(:post, evaluator.posts_counter, user: user)
-
-        user.reload
+      posts do
+        Array.new(posts_counter) { association(:post) }
       end
     end
   end
