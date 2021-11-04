@@ -11,7 +11,7 @@
 	user.skip_confirmation!
 	user.save!
 	3.times do |j|
-		post = user.posts.create!(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet")
+		post = user.posts.create!(title: "Post ##{j}", text: "Lorem Ipsum Dolor Amet")
 		user.likes.create!(post: post)
 		5.times do |k|
 			post.comments.create!(text: "Comment ##{k}", user: user)
