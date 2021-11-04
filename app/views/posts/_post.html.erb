@@ -1,6 +1,6 @@
 <article class="notification my-2">
   <div class="mb-2">
-    <p><%= t('post', id: post.id)%></p>
+    <p><%= t('post_id', id: post.id)%></p>
     <p class="is-size-7 is-italic"><%= t('posted_on', date: post.created_at.to_s(:nice_date)) %></p>
   </div>
   <%= link_to user_post_path(post.user.id, post.id) do %>
