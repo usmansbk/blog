@@ -3,8 +3,12 @@ FactoryBot.define do
     "test#{n}@example.com"
   end
 
+  sequence :name do |n|
+    "John Doe #{n}"
+  end
+
   factory :user do
-    name { 'John Doe' }
+    name
     email
     password { 'secret_token' }
     password_confirmation { 'secret_token' }
