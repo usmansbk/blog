@@ -23,7 +23,7 @@ RSpec.feature 'Users', type: :feature do
     end
 
     scenario "When I click on a user, I am redirected to that user's show page" do
-      find_link(@other_user.id).click
+      find_link(@other_user.id.to_s).click
       expect(current_path).to eq user_path(@other_user.id)
     end
   end
