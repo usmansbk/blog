@@ -16,14 +16,14 @@ RSpec.feature 'User post index page', type: :feature do
   end
 
   scenario 'I can see the number of posts' do
-    expect(page).to have_content "#{@user.posts_counter} Posts" 
+    expect(page).to have_content "#{@user.posts_counter} Posts"
   end
 
   scenario "I can see a post's title" do
-    expect(page).to have_content @user.posts[0].title 
+    expect(page).to have_content @user.posts[0].title
   end
 
   scenario "I can see some of the post's body" do
-    expect(page).to have_content @user.posts[0].text.slice(0, 100) 
+    expect(page).to have_content @user.posts[0].text.slice(0, 100)
   end
 end
