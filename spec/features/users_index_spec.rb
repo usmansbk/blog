@@ -12,7 +12,7 @@ RSpec.feature 'User index page', type: :feature do
   end
 
   scenario 'I can see the profile picture of each user' do
-    expect(find('img') { |img| img[:src] == get_photo(@other_user) }).to be_present
+    expect(find('.user-avatar') { |img| img[:src] == get_photo(@other_user) }).to be_present
   end
 
   scenario 'I can see the number of posts each user has written' do

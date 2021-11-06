@@ -13,7 +13,7 @@ FactoryBot.define do
     password { 'secret_token' }
     password_confirmation { 'secret_token' }
     confirmed_at { Date.today }
-    bio { "Software dev" }
+    bio { 'Software dev' }
 
     factory :admin do
       role { 'admin' }
