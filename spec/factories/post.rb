@@ -12,15 +12,15 @@ FactoryBot.define do
       comments do
         Array.new(comments_counter) { association(:comment) }
       end
-    end
 
-    factory :post_with_likes do
-      transient do
-        likes_counter { 5 }
-      end
+      factory :post_with_comments_and_likes do
+        transient do
+          likes_counter { 5 }
+        end
 
-      likes do
-        Array.new(likes_counter) { association(:like) }
+        likes do
+          Array.new(likes_counter) { association(:like) }
+        end
       end
     end
   end
