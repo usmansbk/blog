@@ -3,7 +3,7 @@
     <p><%= t('post_id', id: post.id)%></p>
     <p class="is-size-7 is-italic"><%= t('posted_on', date: post.created_at.to_s(:nice_date)) %></p>
   </div>
-  <%= link_to user_post_path(post.user.id, post.id) do %>
+  <%= link_to user_post_path(post.user.id, post.id), id: post.id do %>
     <h3 class="title mb-2"><%= post.title %></h3>
   <% end %>
   <div class="buttons is-flex is-justify-content-flex-end">
