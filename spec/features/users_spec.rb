@@ -13,7 +13,9 @@ RSpec.feature 'Users', type: :feature do
     end
 
     scenario 'I can see the profile picture of each user' do
-      expect(page.has_link?("https://ui-avatars.com/api/?name=#{@other_user.name}&background=random")).to be true
+      expect(find('img') do |img|
+               img[:src] == "https://ui-avatars.com/api/?name=#{@other_user.name}&background=random"
+             end).to be_present
     end
 
     scenario 'I can see the number of posts each user has written' do
@@ -21,7 +23,7 @@ RSpec.feature 'Users', type: :feature do
     end
 
     scenario "When I click on a user, I am redirected to that user's show page" do
-      find_link(href: user_path(@other_user.id)).click
+      find_link(@other_user.id).click
       expect(current_path).to eq user_path(@other_user.id)
     end
   end
