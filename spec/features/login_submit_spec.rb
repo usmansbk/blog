@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature 'Logins', type: :feature do
-  background do
-    visit new_user_session_path
-  end
+  background { visit new_user_session_path }
+
   scenario 'without filling in the email and password' do
     click_button 'Log in'
     expect(page).to have_content 'Invalid Email or password'
   end
+
   scenario 'after filling in the username and password with incorrect data' do
     within 'form' do
       fill_in 'user_email', with: 'user@example.com'
