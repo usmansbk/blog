@@ -30,12 +30,14 @@ RSpec.feature 'Logins', type: :feature do
   end
 
   context 'Success' do
-    given(:other_user) { FactoryBot.create :user, email: 'user@example.com', password: 'password', password_confirmation: 'password' }
+    given(:other_user) do
+      FactoryBot.create :user, email: 'user@example.com', password: 'password', password_confirmation: 'password'
+    end
 
     scenario 'after filling in the username and password with correct data' do
       within 'form' do
-        fill_in 'user_email', with: other_user.email 
-        fill_in 'user_password', with: other_user.password 
+        fill_in 'user_email', with: other_user.email
+        fill_in 'user_password', with: other_user.password
       end
       click_button 'Log in'
       expect(page).to have_content 'Signed in successfully'
