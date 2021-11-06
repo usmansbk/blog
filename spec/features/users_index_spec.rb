@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Users index page', type: :feature do
+RSpec.feature 'User index page', type: :feature do
   login_user
   background do
     @other_user = FactoryBot.create :user, name: 'Other user'
