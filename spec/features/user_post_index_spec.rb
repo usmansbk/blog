@@ -28,7 +28,7 @@ RSpec.feature 'User post index page', type: :feature do
   end
 
   scenario 'I can see the first comments on a post' do
-    @user.posts[0].comments.each do |comment|
+    @user.posts[0].recent_comments.each do |comment|
       expect(page).to have_content comment.text
     end
   end
