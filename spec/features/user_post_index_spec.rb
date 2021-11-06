@@ -32,4 +32,8 @@ RSpec.feature 'User post index page', type: :feature do
       expect(page).to have_content comment.text
     end
   end
+
+  scenario 'I can see how many likes a post has' do
+    expect(page).to have_content "#{@user.posts[0].likes_counter} Like"
+  end
 end
