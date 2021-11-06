@@ -30,14 +30,4 @@ RSpec.feature 'User show page', type: :feature do
   scenario 'I can see view all post button' do
     expect(find_link('See all post').visible?).to be true
   end
-
-  scenario "User's post should redirect to post show page" do
-    click_link(@user.recent_posts[0].id.to_s)
-    expect(current_path).to eq user_post_path(@user.id, @user.recent_posts[0].id)
-  end
-
-  scenario "See all post should redirect to user's posts index page" do
-    click_link('See all post')
-    expect(current_path).to eq user_posts_path(@user.id)
-  end
 end
