@@ -16,11 +16,11 @@ RSpec.feature 'Post show page', type: :feature do
   end
 
   scenario 'I can see the number of comments' do
-    expect(page).to have_content "3 Comments" 
+    expect(page).to have_content '3 Comments'
   end
 
   scenario 'I can see the number of likes' do
-    expect(find_button("#{@post.likes_counter} Likes")).to be_present  
+    expect(find_button("#{@post.likes_counter} Likes")).to be_present
   end
 
   scenario 'I can see the text' do
