@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature 'Users', type: :feature do
   login_user
   background do
-    visit root_path
     FactoryBot.create :user_with_posts, name: 'Second user'
+    visit root_path
   end
 
   context 'index page' do
