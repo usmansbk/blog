@@ -26,4 +26,10 @@ RSpec.feature 'User post index page', type: :feature do
   scenario "I can see some of the post's body" do
     expect(page).to have_content @user.posts[0].text.slice(0, 100)
   end
+
+  scenario 'I can see the first comments on a post' do
+    @user.posts[0].comments.each do |comment|
+      expect(page).to have_content comment.text
+    end
+  end
 end
