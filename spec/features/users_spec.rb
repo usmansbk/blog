@@ -7,20 +7,22 @@ RSpec.feature 'Users', type: :feature do
     visit root_path
   end
 
-  scenario 'I can see the username of all other users' do
-    expect(page).to have_content @other_user.name
-  end
+  context 'index page' do
+    scenario 'I can see the username of all other users' do
+      expect(page).to have_content @other_user.name
+    end
 
-  scenario 'I can see the profile picture of each user' do
-    expect(page.has_link?("https://ui-avatars.com/api/?name=#{@other_user.name}&background=random")).to be true
-  end
+    scenario 'I can see the profile picture of each user' do
+      expect(page.has_link?("https://ui-avatars.com/api/?name=#{@other_user.name}&background=random")).to be true
+    end
 
-  scenario 'I can see the number of posts each user has written' do
-    expect(page).to have_content "#{@other_user.posts_counter} Post"
-  end
+    scenario 'I can see the number of posts each user has written' do
+      expect(page).to have_content "#{@other_user.posts_counter} Post"
+    end
 
-  scenario "When I click on a user, I am redirected to that user's show page" do
-    find_link(href: user_path(@other_user.id)).click
-    expect(current_path).to eq user_path(@other_user.id)
+    scenario "When I click on a user, I am redirected to that user's show page" do
+      find_link(href: user_path(@other_user.id)).click
+      expect(current_path).to eq user_path(@other_user.id)
+    end
   end
 end
