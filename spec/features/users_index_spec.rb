@@ -13,9 +13,7 @@ RSpec.feature 'Users', type: :feature do
     end
 
     scenario 'I can see the profile picture of each user' do
-      expect(find('img') do |img|
-               img[:src] == "https://ui-avatars.com/api/?name=#{@other_user.name}&background=random"
-             end).to be_present
+      expect(find('img') { |img| img[:src] == get_photo(@other_user) }).to be_present
     end
 
     scenario 'I can see the number of posts each user has written' do

@@ -5,9 +5,7 @@ RSpec.feature 'Users', type: :feature do
   background { visit user_path(@user.id) }
 
   scenario "I can see the user's profile picture" do
-    expect(find('img') do |img|
-             img[:src] == "https://ui-avatars.com/api/?name=#{@user.name}&background=random"
-           end).to be_present
+    expect(find('img') { |img| img[:src] == get_photo(@user) }).to be_present
   end
   scenario 'I can see the username' do
     expect(page).to have_content @user.name
