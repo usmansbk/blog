@@ -1,11 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
-  def index
-    @comments = Comment.where({ post_id: params[:post_id] }).order('created_at')
-    render json: { status: 'success', data: { comments: @comments } }
-  end
-
   def create
     post = Post.find(params[:post_id])
     comment = post.comments.new(text: comment_params[:text], user: current_user)
@@ -13,10 +8,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if comment.save
         format.html { redirect_to user_post_path(post.user.id, post.id), notice: 'Comment added!' }
-        format.json { render json: { status: 'success', data: { comment: comment } }, status: :created }
       else
         format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to add comment!' }
-        format.json { render json: { status: 'fail', errors: comment.errors }, status: :bad_request }
       end
     end
   end
