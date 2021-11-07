@@ -47,10 +47,11 @@ class PostsController < ApplicationController
     user = post.user
 
     if post.destroy
-      redirect_to user_path(user.id), notice: 'Post deleted!'
+      flash[:notice] = 'Post deleted'
     else
-      redirect_to user_path(user.id), alert: 'Failed to delete post!'
+      flash[:alert] = 'Failed to delete post!'
     end
+    redirect_to user_path(user.id)
   end
 
   private

@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
     comment = post.comments.new(text: comment_params[:text], user: current_user)
 
     if comment.save
-      redirect_to user_post_path(post.user.id, post.id), notice: 'Comment added!'
+      flash[:notice] = 'Comment added!'
     else
-      redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to add comment!'
+      flash[:alert] = 'Failed to add comment!'
     end
+    redirect_to user_post_path(post.user.id, post.id)
   end
 
   def destroy
@@ -17,10 +18,11 @@ class CommentsController < ApplicationController
     post = comment.post
 
     if comment.destroy
-      redirect_to user_post_path(post.user.id, post.id), notice: 'Comment deleted!'
+      flash[:notice] = 'Comment removed!'
     else
-      redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to delete comment!'
+      flash[:alert] = 'Failed to remove comment!'
     end
+    redirect_to user_post_path(post.user.id, post.id)
   end
 
   private
