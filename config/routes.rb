@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   resources :comments, only: [:destroy]
   resources :likes, only: [:destroy]
 
-  get '/posts', to: 'posts#all_posts', as: 'all_posts'
+  namespace :api do
+    resources :posts, only: [:index] do
+      resources :comments, only: [:create, :index]
+    end
+  end
 end
