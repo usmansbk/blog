@@ -7,19 +7,19 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    post = Post.find(params[:post_id])
-    comment = post.comments.new(text: comment_params[:text], user: current_user)
+    @post = Post.find(params[:post_id])
+    @comment = post.comments.new(text: comment_params[:text], user: current_user)
 
     if comment.save
-      render json: { status: 'success', data: { comment: comment } }, status: :created
+      render json: { status: 'success', data: { comment: @comment } }, status: :created
     else
-      render json: { status: 'fail', errors: comment.errors }, status: :bad_request
+      render json: { status: 'fail', errors: @comment.errors }, status: :bad_request
     end
   end
 
   private
 
   def comment_params
-    params.require(:data).permit(:text)
+    params.require(:comment).permit(:text)
   end
 end
