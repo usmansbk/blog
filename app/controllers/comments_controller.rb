@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    comments = Comment.where({ post_id: params[:post_id] }).order('created_at')
-    render json: { status: 'success', data: { comments: comments } }
+    @comments = Comment.where({ post_id: params[:post_id] }).order('created_at')
+    render json: { status: 'success', data: { comments: @comments } }
   end
 
   def create
