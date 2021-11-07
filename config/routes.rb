@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:destroy]
   resources :likes, only: [:destroy]
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     devise_scope :user do
       post 'auth/sign_in', to: 'sessions#create'
     end
