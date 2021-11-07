@@ -10,12 +10,10 @@ class Api::CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     comment = post.comments.new(text: comment_params[:text], user: current_user)
 
-    respond_to do |format|
-      if comment.save
-        format.json { render json: { status: 'success', data: { comment: comment } }, status: :created }
-      else
-        format.json { render json: { status: 'fail', errors: comment.errors }, status: :bad_request }
-      end
+    if comment.save
+      render json: { status: 'success', data: { comment: comment } }, status: :created
+    else
+      render json: { status: 'fail', errors: comment.errors }, status: :bad_request
     end
   end
 
