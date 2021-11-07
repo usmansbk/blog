@@ -7,11 +7,6 @@ class PostsController < ApplicationController
     @posts = @user.posts.order(created_at: :desc)
   end
 
-  def all_posts
-    @posts = Post.all.order('created_at')
-    render json: { status: 'success', data: { posts: @posts } }
-  end
-
   def show
     @user = User.find params[:user_id]
     @post = @user.posts.includes(:comments).find(params[:id])
