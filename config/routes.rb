@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :likes, only: [:destroy]
 
   namespace :api do
+    devise_scope :user do
+      post 'auth/sign_in', to: 'sessions#create'
+    end
     resources :posts, only: [:index] do
       resources :comments, only: [:create, :index]
     end
