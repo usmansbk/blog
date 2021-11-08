@@ -1,10 +1,7 @@
-<%= render "header" %>
 <div class="columns is-flex-direction-column">
   <% @users.each do |user| %>
-    <%= link_to user_path(user.id) do %>
-    <div class="column">
+    <%= link_to user_path(user.id), class: "column" do %>
       <%= render partial: "user", object: user %>
-    </div>
     <% end %>
   <% end %>
 </div>

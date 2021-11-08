@@ -1,30 +1,21 @@
+<%= render "header", post: @post %>
+<div class="is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap my-3">
+  <div class="media is-flex is-align-items-center">
+    <div class="media-left">
+      <div class="image is-32x32">
+        <%= image_tag(get_photo(@user), alt: "avatar", class: "is-rounded") %>
+      </div>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <strong><%= @user.name %></strong>
+        <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="content">
-  <div class="is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap mb-2">
-    <div class="media is-flex is-align-items-center">
-      <div class="media-left">
-        <div class="image is-32x32">
-          <img class="is-rounded" src=<%= get_photo(@user) %>>
-        </div>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <strong><%= @user.name %></strong>
-          <p class="is-size-7 is-italic"><%= t('posted_on', date: @post.created_at.to_s(:nice_date)) %></p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <p class="is-size-7"><%= t('comments_counter', count: @post.comments_counter) %>, <%= t('likes_counter', count: @post.likes_counter) %></p>
-    </div>
-  </div>
-  <div class="is-flex is-flex-wrap-wrap">
-    <h1 class="title is-flex is-flex-grow-1"><%= @post.title %></h1>
-    <% if @liked %>
-      <%= render partial: "unlike_post", post: @post %>
-    <% else %>
-      <%= render partial: "like_post", post: @post %>
-    <% end %>
-  </div>
+  <h1><%= @post.title %></h1>
   <p><%= @post.text %></p>
 </div>
 <%= render partial: "new_comment", post: @post %>

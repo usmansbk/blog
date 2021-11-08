@@ -1,19 +1,26 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-			<h4 class="title">BLOG</h4>
+			<h4 class="title is-5"><%= t('brand') %></h4>
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </a>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-  				<% if user_signed_in? %>
-						<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-danger" %>
-					<% end %>
+  		<% if user_signed_in? %>
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to current_user.name, user_path(current_user.id), class: "button is-info is-small is-inverted" %>
+            <%= link_to t('create_post'), new_post_path, class: "button is-link is-small" %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-small is-danger" %>
+          </div>
         </div>
-      </div>
+			<% end %>
     </div>
   </div>
 </nav>

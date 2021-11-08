@@ -1,7 +1,7 @@
 <article class="media">
   <figure class="media-left">
     <p class="image is-32x32">
-      <img class="is-rounded" src=<%= get_photo(comment.user) %> >
+      <%= image_tag(get_photo(comment.user), alt: "avatar", class: "is-rounded") %>
     </p>
   </figure>
   <div class="media-content">
@@ -12,4 +12,13 @@
         <%= comment.text %>
       </p>
     </div>
+    <% if can? :destroy, comment %>
+      <nav class="level is-mobile">
+        <div class="level-left"></div>
+        <div class="level-right">
+		      <%= button_to "Delete", comment_path(comment.id), remote: true, data: { confirm: 'Are you sure?' }, method: :delete, class: "level-item button is-light is-danger is-small" %>
+        </div>
+      </nav>
+    <% end %>
+  </div>
 </article>

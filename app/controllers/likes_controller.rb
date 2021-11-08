@@ -4,20 +4,23 @@ class LikesController < ApplicationController
     like = post.likes.new user: current_user
 
     respond_to do |format|
-      format.html do
-        if like.save
-          redirect_to user_post_path(post.user.id, post.id)
-        else
-          redirect_to user_post_path(post.user.id, post.id), alert: 'Failed!'
-        end
+      if like.save
+        format.html { redirect_to user_post_path(post.user.id, post.id) }
+      else
+        format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to like post!' }
       end
     end
   end
 
   def destroy
     post = Post.find params[:id]
-    post.users.delete current_user
 
-    redirect_to user_post_path(post.user.id, post.id)
+    respond_to do |format|
+      if post.users.delete current_user
+        format.html { redirect_to user_post_path(post.user.id, post.id) }
+      else
+        format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to unlike post!' }
+      end
+    end
   end
 end

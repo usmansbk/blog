@@ -1,0 +1,16 @@
+<div class="is-flex mb-2 is-justify-content-flex-end">
+	<div class="buttons">
+		<% if @liked %>
+			<%= button_to pluralize(@post.likes_counter, "Like"), like_path(@post.id), method: :delete, remote: true, class: "button is-primary is-small", data: { disable_with: true } %>
+		<% else %>
+			<%= button_to pluralize(@post.likes_counter, "Like"), post_likes_path(@post.id), method: :post, remote: true, class: "button is-primary is-small is-inverted", data: { disable_with: true } %>
+		<% end %>
+		<span class="button is-small is-info is-light is-inverted is-static"><%= pluralize(@post.comments_counter, t('comment')) %></span>
+  	<% if can? :edit, @post %>
+			<%= link_to t('edit'), edit_post_path(@post.id), class: "button is-light is-link is-small" %>
+		<% end %>
+		<% if can? :destroy, @post %>
+			<%= button_to t('delete'), post_path(@post.id), remote: true, method: :delete, data: { confirm: t('confirm') }, class: "button is-light is-danger is-small" %>
+		<% end %>
+	</div>
+</div>
