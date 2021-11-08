@@ -20,10 +20,4 @@ class User < ApplicationRecord
   def recent_posts(limit = 3)
     posts.includes(:comments).order('created_at').last(limit)
   end
-
-  before_create :add_jti
-
-  def add_jti
-    self.jti ||= SecureRandom.uuid
-  end
 end
