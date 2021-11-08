@@ -2,7 +2,6 @@ require 'swagger_helper'
 
 RSpec.describe 'Session', type: :request do
   path '/api/users/sign_in' do
-
     post 'Authenticate new user' do
       tags 'Auth'
       consumes 'application/json'
@@ -12,6 +11,5 @@ RSpec.describe 'Session', type: :request do
         run_test!
       end
     end
-
   end
 end
