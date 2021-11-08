@@ -14,18 +14,18 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy
-    comment = Comment.find params[:id]
-    post = comment.post
+  # def destroy
+  #   comment = Comment.find params[:id]
+  #   post = comment.post
 
-    respond_to do |format|
-      if comment.destroy
-        format.html { redirect_to user_post_path(post.user.id, post.id), notice: 'Comment deleted!' }
-      else
-        format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to delete comment!' }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if comment.destroy
+  #       format.html { redirect_to user_post_path(post.user.id, post.id), notice: 'Comment deleted!' }
+  #     else
+  #       format.html { redirect_to user_post_path(post.user.id, post.id), alert: 'Failed to delete comment!' }
+  #     end
+  #   end
+  # end
 
   private
 
