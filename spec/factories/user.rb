@@ -11,7 +11,7 @@ FactoryBot.define do
     name
     email
     password { 'secret_token' }
-    password_confirmation { 'secret_token' }
+    password_confirmation { password }
     confirmed_at { Date.today }
     bio { 'Software dev' }
 
