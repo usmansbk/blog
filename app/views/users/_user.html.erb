@@ -1,14 +1,14 @@
-<article class="media is-align-items-center is-flex-wrap-wrap">
+<article class="user media is-align-items-center is-flex-wrap-wrap">
   <div class="media-left">
     <figure class="image is-128x128">
-      <%= image_tag(get_photo(user), alt: "avatar") %>
+      <%= image_tag(get_photo(user), alt: "avatar", class: 'user-avatar') %>
     </figure>
   </div>
   <div class="media-content notification">
     <div class="content">
       <h4 class="title is-4"><%= user.name %></h4>
       <p class="subtitle is-size-7"><%= t('joined', date: user.created_at.to_s(:nice_date)) %></p>
-      <p class="has-text-right is-size-7"><%= t('posts_counter', count: user.posts_counter)%></p>
+      <p class="has-text-right is-size-7"><%= pluralize(user.posts_counter, t('post')) %></p>
     </div>
   </div>
 </article>

@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'validates' do
-    subject { Post.new title: 'RSpec', user_id: 0 }
-
-    before { subject.save }
+    subject { FactoryBot.build :post }
 
     it 'should have a title' do
       subject.title = nil
@@ -33,15 +31,15 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#recent_comments' do
-    subject { Post.first }
+    subject { FactoryBot.create :post_with_comments, comments_counter: 5 }
 
-    it 'should return 3 posts' do
+    it 'should return 5 posts' do
       expect(subject.recent_comments.length).to be(5)
     end
   end
 
   describe '#update_counter' do
-    subject { Post.first }
+    subject { FactoryBot.build :post }
 
     it 'should update the user posts counter' do
       subject.update_counter(2)

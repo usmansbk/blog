@@ -3,6 +3,8 @@
   <% @posts.each do |post| %>
     <div class="column">
       <%= render partial: "post", object: post %>
+      <%= render partial: "shared/comment", collection: post.recent_comments %>
     </div>
   <% end %>
 </div>
+<div id="pagination"></div>

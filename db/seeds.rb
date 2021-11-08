@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |i|
-	user = User.create(name: "User ##{i}", bio: "A bio.")
+	user = User.create(name: "User ##{i}", bio: "A bio.", email: "test#{i}@email.com", password: "password", password_confirmation: "password", confirmed_at: Date.today )
 	3.times do |j|
-		post = Post.create(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet", user: user)
+		post = user.posts.create!(title: "Post ##{j}", text: "Lorem Ipsum Dolor Amet")
+		user.likes.create!(post: post)
 		5.times do |k|
-			Comment.create(text: "Comment ##{k}", post: post, user: user)
+			post.comments.create!(text: "Comment ##{k}", user: user)
 		end
-		post.likes.create(user: user)
 	end
 end

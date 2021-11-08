@@ -31,8 +31,8 @@
 
 en:
   brand: "BLOG"
-  posts_counter: "Number of posts: %{count}"
-  post: "Post #%{id}"
+  post: "Post"
+  post_id: "Post #%{id}"
   comments_counter: "Comments: %{count}"
   likes_counter: "Likes: %{count}"
   by: "by %{name}"
