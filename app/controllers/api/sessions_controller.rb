@@ -3,8 +3,8 @@ class Api::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(resource, _opts = {})
-    puts 
-    render json: { message: "You are logged in." }, status: :ok
+  def respond_with(_resource, _opts = {})
+    puts
+    render json: { message: 'You are logged in.' }, status: :ok
   end
 end
