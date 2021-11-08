@@ -1,14 +1,17 @@
 require 'swagger_helper'
 
-RSpec.describe 'Blog API', type: :request do
+RSpec.describe 'Session', type: :request do
   path '/api/users/sign_in' do
-    post 'Log in user' do
+
+    post 'Authenticate new user' do
       tags 'Auth'
-      response '200', 'Signed in' do
-        user = FactoryBot.create :user
-        let(:api_user) { { email: user.email, password: user.password } }
+      consumes 'application/json'
+      produces 'application/json'
+
+      response '201', 'Signed in successfully' do
         run_test!
       end
     end
+
   end
 end
