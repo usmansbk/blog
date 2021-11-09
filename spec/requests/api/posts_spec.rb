@@ -1,19 +1,17 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/posts', type: :request do
-
   path '/api/posts' do
+    get 'list posts' do
+      security [bearer_auth: []]
 
-    get 'list posts'  do
-      security [ bearer_auth: [] ]
-
-      response 200, 'successful'  do
+      response 200, 'successful' do
         login_user
-        let(:Authorization) { "Bearer #{@user.jti}"}
+        let(:Authorization) { "Bearer #{@user.jti}" }
         run_test!
       end
 
-      response 401, 'authentication failed'  do
+      response 401, 'authentication failed' do
         run_test!
       end
     end

@@ -35,11 +35,11 @@ RSpec.configure do |config|
           bearerAuth: {
             type: 'http',
             scheme: 'bearer',
-            bearerFormat: 'JWT' 
+            bearerFormat: 'JWT'
           }
         }
       }
-    },
+    }
   }
 
   # Specify the format of the output Swagger file when running 'rswag:specs:swaggerize'.
