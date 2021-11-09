@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/BlockLength
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -24,11 +22,7 @@ RSpec.configure do |config|
       ],
       components: {
         securitySchemes: {
-          bearerAuth: {
-            type: 'http',
-            scheme: 'bearer',
-            bearerFormat: 'JWT'
-          }
+          bearerAuth: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
         }
       }
     }
