@@ -57,16 +57,6 @@ rails db:schema:load
 rails s
 ```
 
-### API
-
-```sh
-## Generate your api secret
-bundle exec rake secret
-
-## Set key environment variable
-export DEVISE_JWT_SECRET_KEY=your_api_secret
-```
-
 ### Test
 
 ```sh
