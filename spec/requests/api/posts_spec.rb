@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'api/posts', type: :request do
+RSpec.describe 'Blog Posts API', type: :request do
   path '/api/posts' do
     get 'list posts' do
       security [bearer_auth: []]
