@@ -4,16 +4,16 @@ RSpec.describe 'api/posts', type: :request do
 
   path '/api/posts' do
 
-    get('list posts') do
-      response(200, 'successful') do
+    get 'list posts'  do
+      security [ bearer_auth: [] ]
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      response 200, 'successful'  do
+        login_user
+        let(:Authorization) { "Bearer #{@user.jti}"}
+        run_test!
+      end
+
+      response 401, 'authentication failed'  do
         run_test!
       end
     end
