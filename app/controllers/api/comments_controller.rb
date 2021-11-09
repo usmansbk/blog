@@ -8,9 +8,9 @@ class Api::CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = post.comments.new(text: comment_params[:text], user: current_user)
+    @comment = @post.comments.new(text: comment_params[:text], user: current_user)
 
-    if comment.save
+    if @comment.save
       render json: { success: true, data: { comment: @comment } }, status: :created
     else
       render json: { success: false, errors: @comment.errors }, status: :bad_request
