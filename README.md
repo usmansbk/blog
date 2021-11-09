@@ -66,6 +66,10 @@ rails db:seed
 rspec
 ```
 
+### API
+
+[Local API](http://127.0.0.1:3000/api-docs/)
+
 ### Troubleshoot
 
 ### Rspec failing
