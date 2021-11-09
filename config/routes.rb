@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :likes, only: [:destroy]
 
   namespace :api, defaults: { format: :json } do
-    devise_for :users, only: :sessions
     resources :posts, only: [:index] do
       resources :comments, only: [:create, :index]
     end
